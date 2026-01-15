@@ -1,6 +1,4 @@
 const PRODUCT_API_URL = 'https://fakestoreapi.com/products';
-
-
 function App() {
 
   return (
