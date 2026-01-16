@@ -1,0 +1,3 @@
+- [ ] Mensagens de erro com o react querry
+- [ ] Spinnner personalizado de loading pro suspens
+- [ ] Mudar algumas coisas na estiulizacao das coisas
