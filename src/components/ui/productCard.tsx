@@ -1,10 +1,21 @@
-import { BadgeCheck, Star } from "lucide-react";
+import { BadgeCheck, ShoppingCart, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function ProductCard({product}) {
+const handleAddToCart = (e) => {
+    e.preventDefault(); 
+    e.stopPropagation(); 
+    
+    console.log("Adicionar ao carrinho:", product.id);
+  };
   return (
     <Link to={`/product/${product.id}`} className="group block">
       <div className="bg-white rounded-lg border border-slate-200 hover:shadow-md transition-shadow duration-300 flex flex-col overflow-hidden">
+        <div className="relative p-6 pb-2">
+          <button onClick={handleAddToCart} className="absolute top-3 right-3 text-slate-300 hover:cursor-pointer hover:text-blue-500 hover:bg-blue-50 p-1.5 rounded-full transition-colors">
+            <ShoppingCart className="w-5 h-5" />
+          </button>
+        </div>
         <div className="relative p-6 pb-2">
           <img 
             src={product.image} 
