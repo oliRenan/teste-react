@@ -1,19 +1,7 @@
 import { queryOptions} from "@tanstack/react-query";
+import type { Product } from "../types/types";
 
-type Rating = {
-    rate: number;
-    count: number;
-}
 
-export type Product ={
-    id: number;
-    title: string;
-    price: number;
-    description: string;
-    category: string;
-    image: string;
-    rating: Rating;
-}
 
 const getProducts = async ():Promise<Product[]> => {
     const response = await fetch(import.meta.env.VITE_API_URL);
