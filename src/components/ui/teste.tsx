@@ -4,11 +4,13 @@ import ProductCard from './productCard';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import GetProductQuery from '../../queryOptions/useProductsQuery';
 import Sidebar from './sidebar';
+import Navbar from './navbar';
 
 export default function ProductCatalog() {
   const {data:products}= useSuspenseQuery(GetProductQuery())
   return (
     <div className="bg-gray-50 text-slate-600 antialiased selection:bg-blue-100 selection:text-blue-900 min-h-screen font-sans">
+  <Navbar/>
       <div className="max-w-[1600px] mx-auto px-4 py-8 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-8">
           <Sidebar />

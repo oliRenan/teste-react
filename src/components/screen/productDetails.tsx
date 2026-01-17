@@ -63,13 +63,14 @@ export default function ProductDetailsPage() {
   const { id } = useParams()
   const productId =  Number(id)
   const {data:product}= useSuspenseQuery(GetProductQueryById(productId))
+
   return (
     <div className="min-h-screen bg-gray-50 text-slate-600 font-sans selection:bg-blue-100 selection:text-blue-900">
       <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
-    <Navbar quantity={product.rating.count}/>
+    <Navbar/>
       <div className="max-w-[1600px] mx-auto px-4 py-8 lg:px-8">
         <Breadcrumbs  productTitle={product.title}/>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 mb-20">
