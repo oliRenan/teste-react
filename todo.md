@@ -1,5 +1,4 @@
-- [ ] Mensagens de erro com o react querry
-- [ ] Spinnner personalizado de loading pro suspens
-- [ ] Mudar algumas coisas na estiulizacao das coisas
-- [ ] Arrumar os centavos
-- [ ] usar o react hook fomran para input de search e quantidade de itens do carrinho
+- [x] Spinnner personalizado de loading pro suspens
+- [x] Mudar algumas coisas na estiulizacao das coisas
+- [x] Arrumar os centavos
+- [x] usar o react hook fomran para input de search e quantidade de itens do carrinho

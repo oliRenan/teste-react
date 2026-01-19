@@ -37,7 +37,8 @@ export default function CartScreen() {
                             <div className="col-span-3 text-center">QUANTIDADE</div>
                             <div className="col-span-3 text-right">TOTAL</div>
                         </div>
-
+                        {/* PEGUEI ESSA SCROLLBAR DE UM SITE : https://preline.co/docs/custom-scrollbar.html POR DEPENDER DE WEBKIT A DEPENDER DO */}
+                        {/* NAVEGADOR PODE FICAR "BUGADO" , NO MEU CASO O NO BRAVE FOCU BOM POREM NO FIREFOX FICOU DIFERENTE*/}
                         <div className="max-h-[720px] overflow-y-auto pr-2 flex flex-col gap-2 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-50 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-300">
                             {cartItems.map((item) => (
                                 <CartCard key={item.id} item={item}/>

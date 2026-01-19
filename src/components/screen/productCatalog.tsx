@@ -1,10 +1,9 @@
-import React from 'react';
 import { useSearchParams } from 'react-router-dom';
-import ProductCard from './productCard';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import GetProductQuery from '../../queryOptions/useProductsQuery';
-import Sidebar from './sidebar';
-import Navbar from './navbar';
+import Navbar from '../ui/navbar';
+import Sidebar from '../ui/sidebar';
+import ProductCard from '../ui/productCard';
 
 export default function ProductCatalog() {
   const { data: products } = useSuspenseQuery(GetProductQuery());
