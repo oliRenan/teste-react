@@ -11,6 +11,7 @@ import { useForm } from 'react-hook-form';
 import GetProductQuery from '../../queryOptions/useProductsQuery';
 import RelatedProducts from '../ui/relatedProducts';
 import { useCart } from '../../context/Cartcontext';
+import { useEffect } from 'react';
 
 interface ProductQuantityInput {
   quantity: number;
@@ -24,6 +25,13 @@ export default function ProductDetailsPage() {
 
   const {data:product}= useSuspenseQuery(GetProductQueryById(productId))
   const {data: products}= useSuspenseQuery(GetProductQuery())
+
+useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
+  }, [productId]);
 
   const relatedProducts = products
   .filter((item) => item.category === product.category && item.id !== product.id)
