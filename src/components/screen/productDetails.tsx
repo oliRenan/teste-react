@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
 import { 
-  Search, ShoppingBag, ChevronRight, Heart, Star, StarHalf, 
-  Minus, Plus, ShoppingCart, Truck, ShieldCheck, RefreshCw, Lock, Menu 
+  Minus, Plus, ShoppingCart,   
 } from 'lucide-react';
 import Navbar from '../ui/navbar';
 import Breadcrumbs from '../ui/breadcrumbs';
 import GetProductQueryById from '../../queryOptions/useProductQueryById';
-import { Link, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import StarRating from '../ui/starRating';
 import { useForm } from 'react-hook-form';
@@ -21,6 +19,7 @@ interface ProductQuantityInput {
 export default function ProductDetailsPage() {
 
   const { id } = useParams()
+  const navigate = useNavigate();
   const productId =  Number(id)
 
   const {data:product}= useSuspenseQuery(GetProductQueryById(productId))
@@ -39,6 +38,11 @@ export default function ProductDetailsPage() {
   })
 
   const currentQuantity = watch('quantity')
+
+  const handleAddToCart = () => {
+    addToCart(product,currentQuantity);
+    navigate('/cart')
+  }
 
   const handleIncrement = () => {
     if (currentQuantity < product.rating.count) {
@@ -115,7 +119,7 @@ export default function ProductDetailsPage() {
                   <Plus className="w-4 h-4" />
                 </button>
               </div>
-              <button onClick={()=>addToCart(product,currentQuantity)}  className="flex-1 bg-slate-900 hover:bg-slate-800 cursor-pointer text-white font-medium h-12 rounded-lg transition-colors flex items-center justify-center gap-2">
+              <button onClick={()=>handleAddToCart()}  className="flex-1 bg-slate-900 hover:bg-slate-800 cursor-pointer text-white font-medium h-12 rounded-lg transition-colors flex items-center justify-center gap-2">
                 <ShoppingCart className="w-4 h-4" />
                 Adiconar ao carrinho
               </button>
