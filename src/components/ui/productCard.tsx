@@ -1,8 +1,13 @@
 import { BadgeCheck, ShoppingCart, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/Cartcontext";
+import type { Product } from "../../types/productType";
 
-export default function ProductCard({product}) {
+interface ProductCardProps {
+  product: Product;
+}
+
+export default function ProductCard({product}:ProductCardProps) {
 
   const {addToCart} = useCart()
 
@@ -45,7 +50,7 @@ export default function ProductCard({product}) {
           <div className="mt-auto">
             <div className="flex items-baseline gap-2 mb-1">
               <div className="text-slate-900 font-light text-3xl tracking-tight">
-                R$ {product.price}<span className="text-base align-super">90</span>
+                R$ {product.price.toFixed(2).split('.')[0]}<span className="text-base align-super">{product.price.toFixed(2).split('.')[1]}</span>
               </div>
             </div>
           </div>

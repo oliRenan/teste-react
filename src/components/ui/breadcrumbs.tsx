@@ -1,12 +1,17 @@
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const formatCategory = (str) => {
+interface BreadcrumbsProps {
+  productTitle: string;
+  category?: string; 
+}
+
+const formatCategory = (str?:string) => {
   if (!str) return "";
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
-export default function Breadcrumbs({productTitle,category}){
+export default function Breadcrumbs({productTitle,category}:BreadcrumbsProps){
   return(
     <>
       <nav className="flex items-center text-xs text-slate-500 mb-8 overflow-x-auto no-scrollbar whitespace-nowrap">

@@ -3,12 +3,16 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useCart } from "../../context/Cartcontext";
 
+interface SearchFormData {
+  query: string;
+}
+
 export default function Navbar() {
   const { cartItems } = useCart();
   const navigate = useNavigate();
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<SearchFormData>();
 
-  const handleSearch = (data) => {
+  const handleSearch = (data:SearchFormData) => {
     navigate(`/?q=${data.query}`);
   };
 
