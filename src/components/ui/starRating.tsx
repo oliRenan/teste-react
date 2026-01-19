@@ -17,7 +17,7 @@ return(
         })}
       </div>
       {count && (
-        <span className="text-xl text-slate-400 ml-2"> {rate} </span>
+        <span className="text-xl text-slate-400 ml-2"> {rate}  | Quantidade: {count}</span>
       )}
     </div>
 )

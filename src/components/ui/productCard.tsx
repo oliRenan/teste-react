@@ -1,6 +1,6 @@
 import { BadgeCheck, ShoppingCart, Star } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useCart } from "../../context/context";
+import { useCart } from "../../context/Cartcontext";
 
 export default function ProductCard({product}) {
 

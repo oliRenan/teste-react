@@ -10,7 +10,7 @@ interface CartContextType {
   cartItems: CartItem[];
   cartTotal: number;
   cartCount: number;
-  addToCart: (product: Product) => void;
+  addToCart: (product: Product, quantity?:number) => void;
   removeFromCart: (producId: number) => void;
   updateCartItemQuantity: (productId: number, quantity: number) => void;
   clearCart: () => void;
@@ -36,21 +36,20 @@ export function CartProvider({children}: CartProviderProps){
   }, [cartItems]);
 
 
-  function addToCart(product: Product){
+  function addToCart(product: Product, quantity: number = 1) {
     setCartItems((prev) => {
       const itemExists = prev.find((item) => item.id === product.id);
 
       if (itemExists) {
         return prev.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: item.quantity + quantity }
             : item
         );
       }
-console.log(cartItems)
       return [...prev, 
         { ...product,
-          quantity: 1,
+          quantity: quantity,
           date: new Date().toISOString()
         }
       ];
