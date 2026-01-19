@@ -36,7 +36,7 @@ export default function CartCard({item}) {
           <button 
             onClick={() => updateCartItemQuantity(item.id, item.quantity - 1)}
             disabled={item.quantity <= 1}
-            className="w-9 h-full flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed rounded-l-lg transition-colors"
+            className="w-9 h-full flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-50 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed rounded-l-lg transition-colors"cart
           >
             <Minus className="w-3 h-3" />
           </button>
@@ -48,7 +48,7 @@ export default function CartCard({item}) {
           />
           <button 
             onClick={() => updateCartItemQuantity(item.id, item.quantity + 1)}
-            className="w-9 h-full flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-50 rounded-r-lg transition-colors"
+            className="w-9 h-full flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-50 cursor-pointer rounded-r-lg transition-colors"
           >
             <Plus className="w-3 h-3" />
           </button>
