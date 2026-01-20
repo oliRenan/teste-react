@@ -5,6 +5,7 @@ import EmptyCart from '../ui/emptyCart';
 import CartCard from '../ui/cartCard';
 import { useCart } from '../../context/Cartcontext';
 import { AlertCircle} from 'lucide-react'; 
+import CheckoutButton from '../ui/checkoutButton';
 
 export default function CartScreen() {
     const { 
@@ -56,23 +57,23 @@ export default function CartScreen() {
                                     </span>
                                 </div>
                             </div>
-
+                            <CheckoutButton className='bg-green-600'/>
+                            <button 
+                                onClick={() => setIsDialogOpen(true)} 
+                                className="w-full mt-6 bg-red-500 hover:bg-red-600 cursor-pointer text-white border border-red-200 font-medium h-12 rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow"
+                            >
+                                Limpar Carrinho 
+                            </button>
                             <div className="mt-4 pt-4 border-t border-slate-100 text-center">
                                 <Link to={'/'} className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors inline-flex items-center gap-1">
                                     <span aria-hidden="true">←</span> Continuar Comprando
                                 </Link>
                             </div>
                         </div>
-
-                        <button 
-                            onClick={() => setIsDialogOpen(true)} 
-                            className="w-full mt-6 bg-red-500 hover:bg-red-600 cursor-pointer text-white border border-red-200 font-medium h-12 rounded-lg transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow"
-                        >
-                            Limpar Carrinho 
-                        </button>
                     </div>
                 </div>
             </div>
+
             {/* pedi pra ia gerar essa modal */}
             {isDialogOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-in fade-in duration-200">
