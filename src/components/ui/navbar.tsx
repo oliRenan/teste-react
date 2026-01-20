@@ -41,10 +41,9 @@ export default function Navbar() {
       <nav className="border-b border-slate-200 bg-white sticky top-0 z-50">
         <div className="max-w-[1600px] mx-auto px-4 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <span className="font-semibold text-slate-900 text-lg tracking-tight">
+            <Link to={'/'} className="font-semibold text-slate-900 text-lg tracking-tight">
               LOJA MUITO LEGAL
-            </span>
-            {/* Menu Desktop */}
+            </Link>
             <div className="hidden md:flex gap-6 text-sm font-medium text-slate-500">
               <NavLink
                 to="/"
