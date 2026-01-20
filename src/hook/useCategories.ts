@@ -1,3 +1,4 @@
+//pedi pra ia me ajudar criar esse hook, pois essa informacao de categorias sera usada em varios lugares do app
 import { useSuspenseQuery } from "@tanstack/react-query";
 import GetProductQuery from "../queryOptions/useProductsQuery";
 
